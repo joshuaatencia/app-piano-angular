@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'piano';
+
+  constructor() {
+
+  }
+
+  aplicarSonido(value: number): void {
+    const audio = new Audio();
+    audio.src = `../assets/sonidos/note${value}.wav`;
+    audio.load();
+    audio.play();
+  }
 }
